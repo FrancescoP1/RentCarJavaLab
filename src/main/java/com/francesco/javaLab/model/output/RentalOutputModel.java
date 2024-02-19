@@ -17,6 +17,8 @@ public class RentalOutputModel {
 
   private Date endDate;
 
+  private Boolean isFinished;
+
   private VehicleOutputModel vehicle;
 
   private ClientOutputModel client;

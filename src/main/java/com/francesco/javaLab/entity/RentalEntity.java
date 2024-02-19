@@ -27,6 +27,9 @@ public class RentalEntity {
   @Temporal(TemporalType.TIMESTAMP)
   private Date endDate;
 
+  @Column(name = "is_finished")
+  private Boolean isFinished = false;
+
   @ManyToOne
   @JoinColumn(name = "vehicle_id")
   private VehicleEntity vehicle;

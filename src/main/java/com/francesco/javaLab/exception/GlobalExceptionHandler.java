@@ -33,6 +33,18 @@ public class GlobalExceptionHandler {
     return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(restErrorResponse);
   }
 
+  @ExceptionHandler(ActionNotAllowedException.class)
+  public ResponseEntity<RestErrorResponse> handleActionNotAllowedException(
+      ActionNotAllowedException actionNotAllowedException) {
+    RestErrorResponse restErrorResponse =
+        RestErrorResponse.builder()
+            .httpStatusCode(403)
+            .httpStatus(HttpStatus.FORBIDDEN)
+            .message(actionNotAllowedException.getMessage())
+            .build();
+    return ResponseEntity.status(HttpStatus.FORBIDDEN).body(restErrorResponse);
+  }
+
   @ExceptionHandler(Exception.class)
   public ResponseEntity<RestErrorResponse> handleGenericException() {
     RestErrorResponse restErrorResponse =
