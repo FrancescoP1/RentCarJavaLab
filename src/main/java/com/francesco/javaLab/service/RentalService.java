@@ -36,7 +36,7 @@ public class RentalService {
     vehicleService.rentVehicle(vehicleEntity);
     rentalEntity.setVehicle(vehicleEntity);
     rentalEntity.setClient(clientEntity);
-    rentalRepository.save(rentalEntity);
+    rentalEntity = rentalRepository.save(rentalEntity);
     return rentalEntityMapper.fromEntityToOutputModel(rentalEntity);
   }
 
