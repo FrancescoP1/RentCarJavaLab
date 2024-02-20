@@ -1,6 +1,7 @@
 package com.francesco.javaLab.service;
 
 import com.francesco.javaLab.entity.EmployeeEntity;
+import com.francesco.javaLab.exception.ActionNotAllowedException;
 import com.francesco.javaLab.exception.ExceptionConstants;
 import com.francesco.javaLab.exception.ResourceNotFoundException;
 import com.francesco.javaLab.mapper.EmployeeEntityMapper;
@@ -25,6 +26,10 @@ public class EmployeeService {
   public EmployeeOutputModel addEmployee(EmployeeInputModel employeeInputModel) {
     if(!locationRepository.existsById(employeeInputModel.getLocationId())) {
       throw new ResourceNotFoundException(ExceptionConstants.LOCATION_NOT_FOUND);
+    }
+    if(employeeRepository
+        .existsByIdentificationNumber(employeeInputModel.getIdentificationNumber())) {
+      throw new ActionNotAllowedException(ExceptionConstants.EMPLOYEE_ALREADY_EXISTS);
     }
     EmployeeEntity employeeEntity =
         employeeEntityMapper.fromInputModelToEntity(employeeInputModel);

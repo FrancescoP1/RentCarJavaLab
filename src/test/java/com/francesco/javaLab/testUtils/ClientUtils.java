@@ -15,7 +15,7 @@ public class ClientUtils {
       clientEntity.setIdentificationNumber(RandomStringUtils.randomAlphanumeric(15));
     } else {
       clientEntity.setName(clientInputModel.getName());
-      clientEntity.setIdentificationNumber(clientEntity.getIdentificationNumber());
+      clientEntity.setIdentificationNumber(clientInputModel.getIdentificationNumber());
     }
     clientEntity.setRentals(new ArrayList<>());
     return clientEntity;

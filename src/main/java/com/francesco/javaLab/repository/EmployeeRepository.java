@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> {
   List<EmployeeEntity> findAllByLocationId(Long locationId);
+  Boolean existsByIdentificationNumber(String identificationNumber);
 }

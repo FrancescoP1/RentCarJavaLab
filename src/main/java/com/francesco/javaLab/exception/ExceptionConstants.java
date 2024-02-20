@@ -8,6 +8,7 @@ public interface ExceptionConstants {
   String CLIENT_ALREADY_EXISTS = "A client with the provided identification number already exists!";
   String LOCATION_NOT_FOUND = "The requested location does not exist in our system!";
   String EMPLOYEE_NOT_FOUND = "The requested employee does not exist in out system!";
+  String EMPLOYEE_ALREADY_EXISTS = "An employee with the provided identification number already exists!";
 
   String RENTAL_NOT_FOUND = "The requested vehicle rental does not exist in our system!";
   String RENTAL_ALREADY_FINISHED = "The requested rental has already been finished!";
