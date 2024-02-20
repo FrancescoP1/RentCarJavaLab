@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/employee")
+@RestController
+@RequestMapping("/employee")
 @RequiredArgsConstructor
 public class EmployeeController {
   private final EmployeeService employeeService;
