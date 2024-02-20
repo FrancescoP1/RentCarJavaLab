@@ -38,6 +38,6 @@ public class RentalEntity {
   @JoinColumn(name = "client_id")
   private ClientEntity client;
 
-  @OneToOne(mappedBy = "rental")
+  @OneToOne(mappedBy = "rental", cascade = CascadeType.ALL)
   private ReviewEntity review;
 }

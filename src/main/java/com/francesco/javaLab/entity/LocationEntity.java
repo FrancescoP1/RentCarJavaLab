@@ -24,10 +24,10 @@ public class LocationEntity {
   @Column(name = "city")
   private String city;
 
-  @OneToMany(mappedBy = "location")
+  @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
   private List<VehicleEntity> vehicles;
 
-  @OneToMany(mappedBy = "location")
+  @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
   private List<EmployeeEntity> employees;
 
 }

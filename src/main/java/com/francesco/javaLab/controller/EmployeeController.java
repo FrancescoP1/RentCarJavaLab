@@ -33,9 +33,9 @@ public class EmployeeController {
         .body(employeeService.removeEmployee(employeeId));
   }
 
-  @GetMapping("")
+  @GetMapping(value = {""})
   public ResponseEntity<List<EmployeeOutputModel>> getEmployees(
-      @RequestParam(name = "locationId") Long locationId) {
+      @RequestParam(name = "locationId", required = false) Long locationId) {
     return ResponseEntity
         .status(HttpStatus.OK)
         .body(employeeService.getAllEmployees(locationId));

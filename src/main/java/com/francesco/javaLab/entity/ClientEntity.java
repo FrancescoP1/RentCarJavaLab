@@ -22,7 +22,7 @@ public class ClientEntity {
   @Column(name = "identification_number")
   private String identificationNumber;
 
-  @OneToMany(mappedBy = "client")
+  @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
   private List<RentalEntity> rentals;
 
 }

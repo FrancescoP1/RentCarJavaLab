@@ -26,7 +26,7 @@ public class EmployeeEntity {
   @Column(name = "company_role")
   private String companyRole;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "location_id")
   private LocationEntity location;
 }

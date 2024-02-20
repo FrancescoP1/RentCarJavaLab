@@ -32,7 +32,7 @@ public class RentalController {
         .status(HttpStatus.OK).build();
   }
 
-  @PutMapping("/{rentalId}")
+  @PatchMapping("/{rentalId}")
   public ResponseEntity<RentalOutputModel>  finishRental(
       @PathVariable(name = "rentalId") Long rentalId) {
     return ResponseEntity

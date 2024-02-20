@@ -43,6 +43,10 @@ public class RentalService {
   @Transactional
   public void deleteRental(Long rentalId) {
     RentalEntity rentalEntity = getRentalById(rentalId);
+    if(!rentalEntity.getIsFinished()) {
+      throw new ActionNotAllowedException(
+          ExceptionConstants.UNFINISHED_RENTAL_DELETE_MESSAGE);
+    }
     rentalRepository.delete(rentalEntity);
   }
 

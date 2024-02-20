@@ -12,4 +12,5 @@ public interface ExceptionConstants {
 
   String RENTAL_NOT_FOUND = "The requested vehicle rental does not exist in our system!";
   String RENTAL_ALREADY_FINISHED = "The requested rental has already been finished!";
+  String UNFINISHED_RENTAL_DELETE_MESSAGE = "An unfinished rental cannot be deleted from the system!";
 }

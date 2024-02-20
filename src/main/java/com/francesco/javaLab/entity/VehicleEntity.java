@@ -41,6 +41,6 @@ public class VehicleEntity {
   @JoinColumn(name = "location_id")
   private LocationEntity location;
 
-  @OneToMany(mappedBy = "vehicle")
+  @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
   private List<RentalEntity> rentals;
 }
