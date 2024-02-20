@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ClientEntityMapper {
   ClientEntityMapper INSTANCE = Mappers.getMapper(ClientEntityMapper.class);
@@ -14,5 +16,7 @@ public interface ClientEntityMapper {
   ClientEntity fromInputModelToEntity(ClientInputModel clientInputModel);
 
   ClientOutputModel fromEntityToOutputModel(ClientEntity clientEntity);
+
+  List<ClientOutputModel> fromEntityListToOutputList(List<ClientEntity> clientEntities);
 
 }
